@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title> Wiki Data Test</title>
+    </head>
+    <body>
+
+        <%= rc.searchinfo.search %>
+
+        Results <br />
+        <ul>
+        <% for(var i=0; i < rc.search.length; i++) { %>
+
+                <li data-id="<%= rc.search[i].id %>">
+                    <a href="<%= rc.search[i].url %>"><%= rc.search[i].label %> ( <%= rc.search[i].title %> ) :- <%= rc.search[i].description %></a>
+                </li>
+
+        <% } %>
+        </ul>
+
+    </body>
+</html>
