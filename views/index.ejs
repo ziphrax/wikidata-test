@@ -1,21 +1,36 @@
 <html>
     <head>
         <title> Wiki Data Test</title>
+        <link rel="stylesheet" type="text/css" href="/public/libs/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/public/typeahead.css" />
     </head>
     <body>
 
-        <%= rc.searchinfo.search %>
+        <div class="container-fluid">
 
-        Results <br />
-        <ul>
-        <% for(var i=0; i < rc.search.length; i++) { %>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Wiki Data</h1>
+                </div>
+            </div>
 
-                <li data-id="<%= rc.search[i].id %>">
-                    <a href="<%= rc.search[i].url %>"><%= rc.search[i].label %> ( <%= rc.search[i].title %> ) :- <%= rc.search[i].description %></a>
-                </li>
+            <div class="row">
+                <div class="col-xs-12">
+                    <form class="form-inline" method="post">
+                        <div class="form-group">
+                            <label for="search" class="sr-only">Search</label>
+                             <input class="typeahead form-control" type="text" name="search" id="search" placeholder="Type here to search...">
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-        <% } %>
-        </ul>
+        </div>
 
+        <script type="text/javascript" src="/public/libs/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/public/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/public/libs/handlebars/handlebars.min.js"></script>
+        <script type="text/javascript" src="/public/typeahead.bundle.js"></script>
+        <script type="text/javascript" src="/public/app.js"></script>
     </body>
 </html>
